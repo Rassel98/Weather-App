@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
      initialRoute: WeatherPage.routeName,
       routes: {
-        WeatherPage.routeName:(_)=>WeatherPage(),
+        WeatherPage.routeName:(_)=>const WeatherPage(),
         SettingsPage.routeName:(_)=>SettingsPage(),
 
       },

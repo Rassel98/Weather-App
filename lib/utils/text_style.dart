@@ -17,6 +17,15 @@ const txtNormal16White54 = TextStyle(
   fontSize: 16,
   color: Colors.white54,
 );
+const txtAddress24 = TextStyle(
+    fontSize: 24,
+    color: Colors.white
+);
+
+const txtDateHeader18 = TextStyle(
+    fontSize: 18,
+    color: Colors.white
+);
 const txtDateBig18 = TextStyle(
   fontSize: 18,
   color: Colors.white,

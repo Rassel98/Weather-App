@@ -39,6 +39,14 @@ Future<bool> getTempUnitPreferenceValue() async {
   final pref = await SharedPreferences.getInstance();
   return pref.getBool('unit') ?? false;
 }
+  Future<bool>  setPreferenceTempUnitValue(bool tag) async{
+    final pref = await SharedPreferences.getInstance();
+    return pref.setBool('unit', tag);
+  }
+  Future<bool>  getPreferenceTempUnitValue() async{
+    final pref = await SharedPreferences.getInstance();
+    return pref.getBool('unit') ?? false;
+  }
 
 
 bool get hasDataLocated=>currentResponseModel!=null && forecastResponseModel !=null;
