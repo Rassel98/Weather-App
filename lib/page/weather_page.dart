@@ -133,6 +133,8 @@ class _WeatherPageState extends State<WeatherPage> with WidgetsBindingObserver {
           ? Stack(
               // padding: const EdgeInsets.all(8),
               children: [
+                Image.asset('images/bg.gif',height: double.maxFinite,width: double.maxFinite,fit: BoxFit.cover,),
+
                 SizedBox(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
@@ -250,16 +252,32 @@ class _WeatherPageState extends State<WeatherPage> with WidgetsBindingObserver {
                 ),
                 Wrap(
                   children: [
-                    Text(
-                      'Sunrise ${getFormattedDateTime(response.sys!.sunrise!, 'hh:mm a')}',
-                      style: txtNormal16,
+
+
+                    Column(
+                      children: [
+                        const CircleAvatar(
+                          backgroundImage: AssetImage('images/sunrise.png',),
+                        ),
+                        Text(
+                          'Sunrise ${getFormattedDateTime(response.sys!.sunrise!, 'hh:mm a')}',
+                          style: txtNormal16,
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       width: 10,
                     ),
-                    Text(
-                      'Sunset ${getFormattedDateTime(response.sys!.sunset!, 'hh:mm a')}',
-                      style: txtNormal16,
+                    Column(
+                      children: [
+                        const CircleAvatar(
+                          backgroundImage: AssetImage('images/sunset.png',),
+                        ),
+                        Text(
+                          'Sunset ${getFormattedDateTime(response.sys!.sunset!, 'hh:mm a')}',
+                          style: txtNormal16,
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       width: 10,
@@ -284,7 +302,7 @@ class _WeatherPageState extends State<WeatherPage> with WidgetsBindingObserver {
         itemCount: forecastList!.length,
         itemBuilder: (context, index) => Card(
           elevation: 5,
-          color: Colors.white,
+          color: Colors.white70,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
